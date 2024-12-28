@@ -23,6 +23,8 @@ class HuffmanCoder {
     }
   }
 
+  private Node root; // Root of the Huffman Tree
+
   public HuffmanCoder(String feeder) throws Exception {
     HashMap<Character, Integer> fmap = new HashMap<>();
 
@@ -56,12 +58,12 @@ class HuffmanCoder {
       minHeap.insert(newNode);
     }
 
-    Node ft = minHeap.remove();
+    this.root = minHeap.remove();
 
     this.encoder = new HashMap<>();
     this.decoder = new HashMap<>();
 
-    this.initEncoderDecoder(ft, "");
+    this.initEncoderDecoder(this.root, "");
   }
 
   private void initEncoderDecoder(Node node, String osf) {
@@ -76,10 +78,28 @@ class HuffmanCoder {
     initEncoderDecoder(node.right, osf+"1");
   }
 
+  public void displayTree() {
+    System.out.println("Huffman Tree:");
+    displayTree(this.root, "");
+  }
+
+  private void displayTree(Node node, String indent) {
+    if (node == null) {
+      return;
+    }
+
+    if (node.data != null && node.data != '\0') {
+      System.out.println(indent + "Character: '" + node.data + "', Frequency: " + node.cost);
+    } else {
+      System.out.println(indent + "Internal Node, Frequency: " + node.cost);
+    }
+
+    displayTree(node.left, indent + "  ");
+    displayTree(node.right, indent + "  ");
+  }
+
   public String encode(String source) {
     String ans = "";
-
-    // Bitset can be used: like an array but with a bit at each index
 
     for(int i=0; i<source.length(); i++) {
       ans = ans + encoder.get(source.charAt(i));
@@ -101,3 +121,4 @@ class HuffmanCoder {
     return ans;
   }
 }
+

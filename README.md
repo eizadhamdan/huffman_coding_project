@@ -1,1 +1,68 @@
-# huffman_coding_project
+
+# Huffman Encoding Application
+
+## Overview
+
+This project implements a **Huffman Coding algorithm** to compress and decompress text. The application includes a user-friendly **Graphical User Interface (GUI)** built with Java Swing, providing features for encoding strings, visualizing the Huffman tree, and analyzing the efficiency of the compression.
+
+Huffman Coding is a lossless data compression algorithm that uses variable-length binary codes to represent characters, optimizing the storage of text by assigning shorter codes to more frequently used characters.
+
+---
+
+## Features
+
+### Core Features
+- **Encoding**: Converts a given string into its Huffman-encoded binary representation.
+- **Decoding**: Reconstructs the original string from the encoded binary sequence.
+- **Tree Visualization**: Displays the Huffman tree structure used for encoding.
+- **Efficiency Analysis**: Calculates and displays metrics such as:
+  - ASCII bit usage
+  - Huffman bit usage
+  - Bit reduction
+  - Compression efficiency percentage
+
+### Graphical Interface
+- Input field for entering text to encode.
+- Panels to display encoded and decoded text.
+- A dedicated section for efficiency metrics.
+- Interactive visualization of the Huffman tree.
+
+---
+
+
+### File Descriptions
+
+- **Main.java**: The main entry point of the program. It initializes the GUI, handles user input, and coordinates encoding, decoding, and tree visualization.
+- **HuffmanCoder.java**: Implements the Huffman Coding algorithm. Handles tree construction, encoding, and decoding logic.
+- **Heap.java**: A min-heap implementation used as a priority queue for constructing the Huffman tree.
+- **TreePanel.java**: A custom Swing component for drawing the Huffman tree in the GUI.
+
+---
+
+## Requirements
+
+### For Running the Application
+- **Java Runtime Environment (JRE)** 8 or later.
+
+### For Building the Application
+- **Java Development Kit (JDK)** 8 or later.
+- A build tool like `javac` or an IDE (e.g., IntelliJ IDEA, Eclipse).
+
+---
+
+## Installation
+
+### Cloning the Repository
+
+<ol>
+  <li>
+     Open your terminal and clone the repository:
+   ```bash
+    git clone https://github.com/eizadhamdan/huffman_coding_project.git
+  </li>
+  <li>
+    Navigate into the project directory
+    ```bash
+    cd huffman_coding_project
+  </li>
+</ol>

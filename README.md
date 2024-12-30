@@ -66,7 +66,7 @@ Huffman Coding is a lossless data compression algorithm that uses variable-lengt
 ## Running the Application
 
 ### Using Pre-Built Executable
-1. Download the `.jar` file from the [Releases](#) section.
+1. Download the `.jar` file.
 2. Run the program by double-clicking the `.jar` file or using the terminal:
    ```bash
    java -jar HuffmanApp.jar

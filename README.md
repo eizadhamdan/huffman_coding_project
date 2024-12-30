@@ -54,15 +54,41 @@ Huffman Coding is a lossless data compression algorithm that uses variable-lengt
 
 ### Cloning the Repository
 
-<ol>
-  <li>
-     Open your terminal and clone the repository:
+1. Open your terminal and clone the repository:
+
    ```bash
-    git clone https://github.com/eizadhamdan/huffman_coding_project.git
-  </li>
-  <li>
-    Navigate into the project directory
-    ```bash
-    cd huffman_coding_project
-  </li>
-</ol>
+   git clone https://github.com/eizadhamdan/huffman_coding_project.git
+2. Navigate into the project directory:
+
+   ```bash
+   cd huffman_coding_project
+
+## Running the Application
+
+### Using Pre-Built Executable
+1. Download the `.jar` file from the [Releases](#) section.
+2. Run the program by double-clicking the `.jar` file or using the terminal:
+   ```bash
+   java -jar HuffmanApp.jar
+
+### Without Pre-Built Executable
+1. Compile the source files:
+   ```bash
+   javac *.java
+2. Run the program:
+   ```bash
+   java Main
+
+## Example Usage
+
+### Steps:
+
+1. **Input**: Enter a string in the input field.
+2. **Encode**: Click the "Encode" button to compress the string.
+3. **Output**:
+   - Encoded binary string
+   - Decoded original string
+   - Efficiency analysis (bits saved and compression ratio)
+4. **Visualization**: View the Huffman tree structure in the tree panel.
+
+

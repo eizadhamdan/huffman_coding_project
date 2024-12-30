@@ -80,7 +80,7 @@ public class Main {
 	efficiencyOutput.setEditable(false);
 	efficiencyOutput.setFont(new Font("Monospaced", Font.PLAIN, 14));
 	efficiencyOutput.setForeground(Color.BLACK);
-	efficiencyOutput.setBackground(new Color(45, 212, 191));
+	efficiencyOutput.setBackground(new Color(129, 140, 248));
 	efficiencyOutput.setBorder(BorderFactory.createLineBorder(Color.GRAY, 1));
 
 	// Efficiency Panel
@@ -90,18 +90,33 @@ public class Main {
 	JLabel efficiencyLabel = new JLabel("Efficiency Analysis:");
 	efficiencyLabel.setFont(new Font("Arial", Font.BOLD, 14));
 	efficiencyLabel.setForeground(new Color(34, 139, 34));
+	efficiencyLabel.setBackground(new Color(129, 140, 248));
 	efficiencyPanel.add(efficiencyLabel, BorderLayout.NORTH);
 	efficiencyPanel.add(efficiencyScroll, BorderLayout.CENTER);
 
 	// Tree Visualization Panel
+	JPanel treePanelContainer = new JPanel();
+	treePanelContainer.setLayout(new BorderLayout());
+	treePanelContainer.setPreferredSize(new Dimension(900, 450));
+
+	// Add heading label
+	JLabel treeHeading = new JLabel("Huffman Tree", SwingConstants.CENTER);
+	treeHeading.setFont(new Font("Arial", Font.BOLD, 18));
+	treeHeading.setForeground(new Color(146, 64, 14));
+	treeHeading.setBorder(BorderFactory.createEmptyBorder(10, 0, 10, 0));
+
+	// Tree Panel
 	TreePanel treePanel = new TreePanel();
 	treePanel.setPreferredSize(new Dimension(900, 400));
 
-	// Add components to frame
+	// Add heading and tree panel to the container
+	treePanelContainer.add(treeHeading, BorderLayout.NORTH);
+	treePanelContainer.add(treePanel, BorderLayout.CENTER);
+
+	frame.add(treePanelContainer, BorderLayout.SOUTH);
 	frame.add(inputPanel, BorderLayout.NORTH);
 	frame.add(outputPanel, BorderLayout.CENTER);
 	frame.add(efficiencyPanel, BorderLayout.EAST);
-	frame.add(treePanel, BorderLayout.SOUTH);
 
         // Action Listener for Encoding
         encodeButton.addActionListener(new ActionListener() {
@@ -121,11 +136,9 @@ public class Main {
                     encodedOutput.setText(encoded);
                     decodedOutput.setText(decoded);
 
-                    // ASCII Bits Calculation
                     int asciiBits = input.length() * 8;
-
-                    // Huffman Bits Calculation
                     int huffmanBits = 0;
+                    
                     for (char c : input.toCharArray()) {
                         huffmanBits += coder.getEncoder().get(c).length();
                     }
@@ -141,7 +154,6 @@ public class Main {
                         "Efficiency: " + String.format("%.2f", efficiency) + " %"
                     );
 
-                    // Set the tree for visualization
                     treePanel.setTree(coder.getRoot());
                     
                 } catch (Exception ex) {

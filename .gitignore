@@ -1,2 +1,4 @@
 .vscode
 .idea
+/out
+huffman_coding_project.iml

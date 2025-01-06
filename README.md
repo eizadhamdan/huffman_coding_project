@@ -91,4 +91,8 @@ Huffman Coding is a lossless data compression algorithm that uses variable-lengt
    - Efficiency analysis (bits saved and compression ratio)
 4. **Visualization**: View the Huffman tree structure in the tree panel.
 
+## Example Pictures
 
+<img src="huffman_app_pic1.png" />
+<br />
+<img src="huffman_app_pic2.png" />
